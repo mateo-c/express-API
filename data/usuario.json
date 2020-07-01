@@ -1,17 +1,15 @@
-[
     {
-        "_id": "5eb39c4998e4f47b98af7fa8",
-        "idDoc": 1,
-        "nombre": "Juan Perez",
-        "password": "abc123",
-        "email": "juanp@mail.com",
-        "edad": 27,
+        "idDoc": 4,
+        "nombre": "Carlos Acosta",
+        "password": "iop123",
+        "email": "acosta@mail.com",
+        "edad": 43,
         "pets": [
             {
-                "dogId": "qqqq",
-                "dogNick": "Pipo",
+                "dogId": "hhh",
+                "dogNick": "Brutus",
                 "dogSex": "male",
-                "dogBreed": "doberman",
+                "dogBreed": "dogo",
                 "liked": [
                     {
                         "idPretend": "xxx"
@@ -33,4 +31,3 @@
             }
         ]
     }
-]

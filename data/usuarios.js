@@ -22,12 +22,12 @@ async function getUsuario(usuarioId){
     return documento; 
 }
 
-async function pushUsuario(usuario){
+async function pushUsuario(usuarioId){
     const clientmongo = await conecction.getConnection();
 
     const result = await clientmongo.db('sample_users1')
         .collection('dogOwners')
-        .insertOne(usuario);
+        .insertOne(usuarioId);
     
     return result;
 }
@@ -57,7 +57,7 @@ async function deleteUsuario(usuarioId){
 
     const result = await clientmongo.db('sample_users1')
         .collection('dogOwners')
-        .deleteOne({_id: parseInt(usuarioId)});
+        .deleteOne({"_id":ObjectId(usuarioId)});
     return result;
 }
 
