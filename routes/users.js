@@ -17,7 +17,7 @@ router.get('/:id', async (req, res)=>{
 
 //---------INSERTAR UNO---------------
 router.post('/', async (req, res) => {
-  /* FORMATO A ENVIAR
+  /* FORMATO A ENVIAR EN BODY
   {
     "idDoc": 4,
     "nombre": "Carlos Acosta",
@@ -47,6 +47,18 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res)=>{
   let usuario = await dataUsuarios.deleteUsuario(req.params.id);
   res.send(`Usuario eliminado: ${usuario}`);
+});
+
+//---------ACTUALIZAR UNO---------------
+router.put('/:id', async (req, res)=>{
+/* FORMATO A ENVIAR EN BODY
+  {
+    "nombre": "Marta Lopez",
+    "email": "martalopez@mail.com"
+  }
+  */
+  let usuario = await dataUsuarios.updateUsuario(req.params.id, req.body);
+  res.send(`Usuario actualizado: ${usuario}`);
 });
 
 module.exports = router;

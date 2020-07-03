@@ -22,26 +22,25 @@ async function getUsuario(usuarioId){
     return documento; 
 }
 
-async function pushUsuario(usuarioId){
+async function pushUsuario(usuario){
     const clientmongo = await conecction.getConnection();
 
     const result = await clientmongo.db('sample_users1')
         .collection('dogOwners')
-        .insertOne(usuarioId);
+        .insertOne(usuario);
     
     return result;
 }
 
-async function updateUsuario(usuario){
+async function updateUsuario(usuarioId, usuario){
     const clientmongo = await conecction.getConnection();
 
-    const query = {_id: parseInt(usuario._id)};
+    const query = {"_id":ObjectId(usuarioId)};
+
     const newvalues  = {$set: 
         {
-            nombre: usuario.name,
-            password: usuario.password,
-            email: usuario.email,
-            edad: usuario.edad
+            nombre: usuario.nombre,
+            email: usuario.email
         }
     };
 

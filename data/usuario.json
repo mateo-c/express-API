@@ -8,14 +8,16 @@
             {
                 "dogId": "hhh",
                 "dogNick": "Brutus",
+                "dogPic":"url:tanto",
+                "dogDesc": "Es muy amable pero rompe los huevos.",
                 "dogSex": "male",
                 "dogBreed": "dogo",
-                "liked": [
+                "liked-by": [
                     {
                         "idPretend": "xxx"
                     }
                 ],
-                "likes": [
+                "like-to": [
                     {
                         "idLike": "xxx"
                     },
