@@ -26,7 +26,7 @@ async function pushMascota(usuario, mascota){
 }
 
 async function getMascota(mascotaId){
-    const clientmongo = await conecction.getConnection();
+    //const clientmongo = await conecction.getConnection();
     //const id = parseInt(usuarioId);
 
     let mascotas = getMascotas();

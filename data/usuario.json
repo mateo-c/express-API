@@ -14,7 +14,8 @@
                 "dogBreed": "dogo",
                 "likes": [
                     {
-                        "idPretend": "xxx"
+                        "usuarioId": "xxx",
+                        "likeId": "xxx"
                     }
                 ],
                 "matches": [
