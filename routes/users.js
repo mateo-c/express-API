@@ -4,7 +4,7 @@ const dataUsuarios = require('../data/usuarios');
 
 
 //---------LISTAR TODOS---------------
-router.get('/', async function(req, res, next) {
+router.get('/', async function(req, res) {
   let usuarios = await dataUsuarios.getUsuarios();
   res.json(usuarios);
 });
@@ -19,7 +19,6 @@ router.get('/:id', async (req, res)=>{
 router.post('/', async (req, res) => {
   /* FORMATO A ENVIAR EN BODY
   {
-    "idDoc": 4,
     "nombre": "Carlos Acosta",
     "password": "iop123",
     "email": "acosta@mail.com",
@@ -27,8 +26,11 @@ router.post('/', async (req, res) => {
   }
   */
 
+ const d = new Date();
+ const id = `${d.getDate()}${d.getMonth()}${d.getFullYear()}${d.getHours()}${d.getMinutes()}${d.getMilliseconds()}`;
+
   let usuario = {
-    idDoc: req.body.idDoc,
+    idDoc: id,
     nombre: req.body.nombre,
     password: req.body.password,
     email: req.body.email,
