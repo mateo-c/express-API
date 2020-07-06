@@ -10,9 +10,5 @@ router.post('/:usuarioId/:idPerro/', async function(req, res) {
     res.json(like)
 });
 
-router.get('/', async function(req, res){
-    const obj = await dataLike.testMatch("5f027924a1b90d41a0e0534a", "5620202334948", "5f027ed3a1b90d41a0e0534b", "5620202337560");
-    res.send(obj) 
-});
 
 module.exports = router;
