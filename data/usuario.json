@@ -12,17 +12,9 @@
                 "dogDesc": "Es muy amable pero rompe los huevos.",
                 "dogSex": "male",
                 "dogBreed": "dogo",
-                "liked_by": [
+                "likes": [
                     {
                         "idPretend": "xxx"
-                    }
-                ],
-                "like_to": [
-                    {
-                        "idLike": "xxx"
-                    },
-                    {
-                        "idLike": "zzz"
                     }
                 ],
                 "matches": [

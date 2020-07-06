@@ -10,7 +10,7 @@ router.get('/', async function(req, res, next) {
 
     console.log(chalk.bgCyan.black(` <-- Obteniendo listado de mascotas. `));
 
-    if(req.query.sexo=="male" || req.query.sexo=="famale"){
+    if(req.query.sexo=="male" || req.query.sexo=="female"){
         mascotas = mascotas.filter(pet=> pet.dogSex == req.query.sexo)
         console.log(chalk.bgCyan.black(` <-- Filtrado por sexo`));
     }
@@ -49,8 +49,7 @@ router.post('/:idUsuario', async (req, res) => {
         dogPic: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Dog_silhouette.svg/1200px-Dog_silhouette.svg.png",
         dogSex: req.body.dogSex,
         dogBreed: req.body.dogBreed,
-        liked_by: [],
-        likes_to: [],
+        likes:[],
         matches: []
     };
   

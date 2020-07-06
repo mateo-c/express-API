@@ -58,19 +58,18 @@ async function deleteMascota(usuarioId, mascota){
 async function updateMascota(usuarioId, mascotaId, cambios){
     const clientmongo = await conecction.getConnection();
 
-    const query = {"_id":ObjectId(usuarioId)};
+    const query ={"_id":ObjectId(usuarioId), "pets.dogId": mascotaId };
 
     const objetoModificado  = {$set: 
-        {pets: { dogId:mascotaId,
-        dogNick:cambios.dogNick,
-        dogSex:cambios.dogSex,
-        dogBreed:cambios.dogBreed}
-        }
+        {"pets.$.dogNick" : cambios.dogNick,
+        "pets.$.dogSex" : cambios.dogSex,
+        "pets.$.dogBreed" : cambios.dogBreed
+    }
     };
 
     const result  = await clientmongo.db('sample_users1')
         .collection('dogOwners')
-        .updateOne(query, objetoModificado);
+        .update(query, objetoModificado);
     
 
     return result;
