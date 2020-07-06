@@ -10,5 +10,9 @@ router.post('/:usuarioId/:idPerro/', async function(req, res) {
     res.json(like)
 });
 
-
+router.delete('/:usuarioId/:idPerro/', async function (req, res) {
+    console.log(req.params.idPerro)
+    let like = await dataLike.removeLike(req.params.usuarioId, req.params.idPerro, req.body);
+    res.json(like)
+});
 module.exports = router;
