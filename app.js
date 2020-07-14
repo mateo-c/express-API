@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var multer  = require('multer');
 
 
 //------rastreando todos los routes
@@ -10,9 +11,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var petsRouter = require('./routes/pets');
 var likesRouter = require('./routes/likes')
-const bienvenidaRouter = require('./routes/bienvenida');
+
 
 var app = express();
+app.use('/pets/images',express.static('public/images'));
 
 //------- view engine setup
 app.set('views', path.join(__dirname, 'views'));
